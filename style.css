@@ -19,12 +19,15 @@ body {
     line-height: 1.7;
     color: var(--dark-text);
     background-color: var(--white);
+}
+
+body.loading {
     opacity: 0;
-    transition: opacity 0.5s ease;
 }
 
 body.loaded {
     opacity: 1;
+    transition: opacity 0.5s ease;
 }
 
 body.menu-open {
@@ -77,6 +80,7 @@ header h1 {
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--dark-text);
+    transition: font-size 0.4s ease;
 }
 
 /* Menú Desktop */
