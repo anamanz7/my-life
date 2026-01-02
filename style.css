@@ -1118,11 +1118,15 @@ footer {
 
     .portfolio-info {
         padding: 2.5rem 2rem;
-        bottom: -40%;
+        bottom: -55%;
     }
 
     .portfolio-card:hover .portfolio-info {
         bottom: 0;
+        background: linear-gradient(to top,
+            rgba(42, 42, 42, 0.95) 0%,
+            rgba(42, 42, 42, 0.85) 50%,
+            transparent 100%);
     }
 
     .portfolio-title {
