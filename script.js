@@ -345,7 +345,41 @@ const projectsData = {
             <p>El desarrollo incluye la creación de moodboards conceptuales, alzados detallados en color, planos de cubierta, especificaciones de acabados y bocetos preliminares. Cada elemento ha sido cuidadosamente diseñado para crear espacios que equilibran belleza y practicidad.</p>
             <p>La documentación técnica refleja un proceso de diseño meticuloso, donde cada detalle ha sido considerado para garantizar la viabilidad constructiva y la coherencia estética del proyecto.</p>
         `,
-        images: [
+        renderizados: [
+            {
+                src: 'PORTFOLIO/MAS-CREATION/images/1 DIA HORIZ.jpg',
+                caption: 'Renderizado Día - Vista panorámica'
+            },
+            {
+                src: 'PORTFOLIO/MAS-CREATION/images/1 NOCHE.jpg',
+                caption: 'Renderizado Noche - Iluminación exterior'
+            },
+            {
+                src: 'PORTFOLIO/MAS-CREATION/images/2 DIA.jpg',
+                caption: 'Vista Día - Espacio principal'
+            },
+            {
+                src: 'PORTFOLIO/MAS-CREATION/images/2 NOCHE.jpg',
+                caption: 'Vista Noche - Ambiente nocturno'
+            },
+            {
+                src: 'PORTFOLIO/MAS-CREATION/images/3 DIA.jpg',
+                caption: 'Detalle Día - Interior'
+            },
+            {
+                src: 'PORTFOLIO/MAS-CREATION/images/3 NOCHE.jpg',
+                caption: 'Detalle Noche - Iluminación interior'
+            },
+            {
+                src: 'PORTFOLIO/MAS-CREATION/images/5 DIA.png',
+                caption: 'Concepto Día - Perspectiva general'
+            },
+            {
+                src: 'PORTFOLIO/MAS-CREATION/images/5 NOCHE.png',
+                caption: 'Concepto Noche - Vista completa'
+            }
+        ],
+        planos: [
             {
                 src: 'PORTFOLIO/MAS-CREATION/images/moodboard.jpg',
                 caption: 'Moodboard - Concepto y paleta de materiales'
@@ -398,7 +432,8 @@ function openProject(event, projectId) {
     const projectDescription = document.getElementById('project-description');
     const projectHeroImage = document.getElementById('project-hero-image');
     const projectBreadcrumbTitle = document.getElementById('project-breadcrumb-title');
-    const projectImagesGrid = document.getElementById('project-images-grid');
+    const projectRenderizadosGrid = document.getElementById('project-renderizados-grid');
+    const projectPlanosGrid = document.getElementById('project-planos-grid');
 
     // Rellenar información del proyecto
     projectTitle.textContent = project.title;
@@ -409,16 +444,44 @@ function openProject(event, projectId) {
     projectHeroImage.alt = project.title;
     projectBreadcrumbTitle.textContent = project.title;
 
-    // Limpiar y rellenar grid de imágenes
-    projectImagesGrid.innerHTML = '';
-    project.images.forEach(image => {
-        const imageItem = document.createElement('div');
-        imageItem.className = 'project-image-item';
-        imageItem.innerHTML = `
-            <img src="${image.src}" alt="${image.caption}" loading="lazy">
-            <p class="project-image-caption">${image.caption}</p>
-        `;
-        projectImagesGrid.appendChild(imageItem);
+    // Limpiar y rellenar grid de renderizados
+    projectRenderizadosGrid.innerHTML = '';
+    if (project.renderizados) {
+        project.renderizados.forEach((image, index) => {
+            const imageItem = document.createElement('div');
+            imageItem.className = 'project-image-item';
+            imageItem.innerHTML = `
+                <img src="${image.src}" alt="${image.caption}" loading="lazy" class="project-thumbnail" data-index="${index}" data-type="renderizados">
+                <p class="project-image-caption">${image.caption}</p>
+            `;
+            projectRenderizadosGrid.appendChild(imageItem);
+        });
+    }
+
+    // Limpiar y rellenar grid de planos
+    projectPlanosGrid.innerHTML = '';
+    if (project.planos) {
+        project.planos.forEach((image, index) => {
+            const imageItem = document.createElement('div');
+            imageItem.className = 'project-image-item';
+            imageItem.innerHTML = `
+                <img src="${image.src}" alt="${image.caption}" loading="lazy" class="project-thumbnail" data-index="${index}" data-type="planos">
+                <p class="project-image-caption">${image.caption}</p>
+            `;
+            projectPlanosGrid.appendChild(imageItem);
+        });
+    }
+
+    // Añadir event listeners para abrir lightbox
+    const allThumbnails = document.querySelectorAll('.project-thumbnail');
+    allThumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', function() {
+            const index = parseInt(this.dataset.index);
+            const type = this.dataset.type;
+            const images = type === 'renderizados' ? project.renderizados : project.planos;
+            openLightbox(images, index);
+        });
+        thumbnail.style.cursor = 'pointer';
     });
 
     // Mostrar vista del proyecto
@@ -470,6 +533,100 @@ window.addEventListener('load', function() {
                 const fakeEvent = { preventDefault: () => {} };
                 openProject(fakeEvent, projectId);
             }, 100);
+        }
+    }
+});
+
+// ====================================
+// LIGHTBOX PARA IMÁGENES
+// ====================================
+let currentLightboxIndex = 0;
+let lightboxImages = [];
+
+function openLightbox(images, startIndex) {
+    lightboxImages = images;
+    currentLightboxIndex = startIndex;
+
+    // Crear lightbox si no existe
+    let lightbox = document.getElementById('lightbox');
+    if (!lightbox) {
+        lightbox = document.createElement('div');
+        lightbox.id = 'lightbox';
+        lightbox.className = 'lightbox';
+        lightbox.innerHTML = `
+            <button class="lightbox-close" onclick="closeLightbox()" aria-label="Cerrar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <button class="lightbox-nav lightbox-prev" onclick="lightboxPrev()" aria-label="Anterior">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <button class="lightbox-nav lightbox-next" onclick="lightboxNext()" aria-label="Siguiente">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+            <div class="lightbox-content">
+                <img id="lightbox-image" src="" alt="">
+                <p id="lightbox-caption"></p>
+                <p class="lightbox-counter"><span id="lightbox-current">1</span> / <span id="lightbox-total">1</span></p>
+            </div>
+        `;
+        document.body.appendChild(lightbox);
+    }
+
+    showLightboxImage(currentLightboxIndex);
+    lightbox.classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox) {
+        lightbox.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+}
+
+function showLightboxImage(index) {
+    if (index < 0) {
+        currentLightboxIndex = lightboxImages.length - 1;
+    } else if (index >= lightboxImages.length) {
+        currentLightboxIndex = 0;
+    } else {
+        currentLightboxIndex = index;
+    }
+
+    const image = lightboxImages[currentLightboxIndex];
+    document.getElementById('lightbox-image').src = image.src;
+    document.getElementById('lightbox-image').alt = image.caption;
+    document.getElementById('lightbox-caption').textContent = image.caption;
+    document.getElementById('lightbox-current').textContent = currentLightboxIndex + 1;
+    document.getElementById('lightbox-total').textContent = lightboxImages.length;
+}
+
+function lightboxNext() {
+    showLightboxImage(currentLightboxIndex + 1);
+}
+
+function lightboxPrev() {
+    showLightboxImage(currentLightboxIndex - 1);
+}
+
+// Cerrar lightbox con tecla ESC y navegar con flechas
+document.addEventListener('keydown', function(e) {
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox && lightbox.classList.contains('show')) {
+        if (e.key === 'Escape') {
+            closeLightbox();
+        } else if (e.key === 'ArrowRight') {
+            lightboxNext();
+        } else if (e.key === 'ArrowLeft') {
+            lightboxPrev();
         }
     }
 });
