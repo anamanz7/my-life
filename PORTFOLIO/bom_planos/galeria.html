@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto BOM - Ana Manzanares</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f7e1d4;
+            color: #66493a;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: #66493a;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #a48373;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 30px;
+            color: #66493a;
+            border-bottom: 2px solid #a48373;
+            padding-bottom: 10px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .gallery-item .caption {
+            padding: 15px;
+            background: white;
+        }
+
+        .gallery-item .caption h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 5px;
+            color: #66493a;
+        }
+
+        .gallery-item .caption p {
+            font-size: 0.9rem;
+            color: #a48373;
+        }
+
+        .renders-grid {
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            padding: 20px;
+            color: #a48373;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .gallery, .renders-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Proyecto BOM</h1>
+            <p class="subtitle">Diseño de Interiores - Espacios Comerciales</p>
+            <p>Ana Manzanares González | ESDI-B</p>
+        </header>
+
+        <section class="section">
+            <h2>📐 Planos Técnicos</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="07_alzado_proyectado.jpg" alt="Alzado Proyectado">
+                    <div class="caption">
+                        <h3>Alzado Proyectado</h3>
+                        <p>Vista frontal con acotación</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="08_planta_proyectada.jpg" alt="Planta Proyectada">
+                    <div class="caption">
+                        <h3>Planta Proyectada</h3>
+                        <p>Distribución y superficies</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="09_secciones_longitudinales.jpg" alt="Secciones Longitudinales">
+                    <div class="caption">
+                        <h3>Secciones Longitudinales</h3>
+                        <p>Cortes A y C acotados</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="10_seccion_transversal.jpg" alt="Sección Transversal">
+                    <div class="caption">
+                        <h3>Sección Transversal</h3>
+                        <p>Corte B acotado</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="11_planta_mobiliario.jpg" alt="Planta con Mobiliario">
+                    <div class="caption">
+                        <h3>Planta con Mobiliario</h3>
+                        <p>Distribución del mobiliario</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="19_detalle_constructivo.jpg" alt="Detalle Constructivo">
+                    <div class="caption">
+                        <h3>Detalle Constructivo</h3>
+                        <p>Falsos techos - Escala 1:75</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🎨 Planos de Acabados</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="20_planta_mobiliario_color.jpg" alt="Planta a Color">
+                    <div class="caption">
+                        <h3>Planta Mobiliario Color</h3>
+                        <p>Vista con acabados y colores</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="23_pavimentos.jpg" alt="Pavimentos">
+                    <div class="caption">
+                        <h3>Pavimentos</h3>
+                        <p>Tipos de suelo y acabados</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="28_planta_iluminaria.jpg" alt="Iluminación">
+                    <div class="caption">
+                        <h3>Planta de Iluminación</h3>
+                        <p>Distribución de luminarias</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🖼️ Renders 3D</h2>
+            <div class="gallery renders-grid">
+                <div class="gallery-item">
+                    <img src="render_01.jpg" alt="Render Interior 1">
+                    <div class="caption">
+                        <h3>Vista Interior - Degustación</h3>
+                        <p>Zona de exposición y degustación</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="render_02.jpg" alt="Render Interior 2">
+                    <div class="caption">
+                        <h3>Vista Interior - Mostrador</h3>
+                        <p>Mostrador central y mobiliario</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="render_03.jpg" alt="Render Interior 3">
+                    <div class="caption">
+                        <h3>Vista Interior - Zona Asientos</h3>
+                        <p>Área de degustación</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="render_04.jpg" alt="Render Interior 4">
+                    <div class="caption">
+                        <h3>Vista Reflejo Espejo</h3>
+                        <p>Perspectiva desde espejo decorativo</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="render_05.jpg" alt="Render Interior 5">
+                    <div class="caption">
+                        <h3>Vista Detalle</h3>
+                        <p>Espejo y elementos decorativos</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="render_06.jpg" alt="Render Escaparate">
+                    <div class="caption">
+                        <h3>Vista Escaparate</h3>
+                        <p>Fachada exterior del local</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Proyecto BOM - Bombonería | Ana Manzanares González</p>
+            <p>Diseño de Interiores - ESDI 3º</p>
+        </footer>
+    </div>
+</body>
+</html>
