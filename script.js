@@ -341,9 +341,9 @@ const projectsData = {
         category: 'Espacios Comerciales',
         heroImage: 'PORTFOLIO/BOM/imagenes/render-escaparate-1-ok.png',
         description: `
-            <p>Proyecto de diseño de espacio comercial para tienda tradicional. El proyecto desarrolla un concepto de interiorismo que combina elementos orgánicos con una paleta de tonos tierra y rosa, creando una atmósfera cálida y envolvente.</p>
-            <p>El diseño se caracteriza por el uso de formas curvas y suaves que se reflejan en el mobiliario, la iluminación arquitectónica integrada y los detalles decorativos. El suelo de terrazo aporta textura y personalidad al espacio, mientras que los elementos esféricos y las superficies redondeadas generan un lenguaje formal coherente.</p>
-            <p>El proyecto incluye documentación completa: planos de planta, secciones técnicas, detalles constructivos del mostrador, bocetos conceptuales y renderizados que muestran diferentes perspectivas del espacio interior.</p>
+            <p>Diseño de bombonería boutique de nivel medio-alto en el centro de Almería, Calle Gerona. Espacio comercial en edificio protegido por patrimonio que fusiona tradición y contemporaneidad con influencias Art Déco.</p>
+            <p>El diseño integra zona de venta, exposición, taller artesanal, degustación y cámara frigorífica. Inspirado en la semilla del cacao y moldes de bombones, el proyecto crea volúmenes orgánicos con paleta tierra-rosa, terrazo y elementos esféricos.</p>
+            <p>Elegancia, sostenibilidad y funcionalidad convergen en un espacio envolvente para productos exclusivos. El proyecto incluye documentación completa: planos de planta, secciones técnicas, detalles constructivos del mostrador, bocetos conceptuales y renderizados que muestran diferentes perspectivas del espacio interior.</p>
         `,
         renderizados: [
             {
@@ -392,7 +392,7 @@ const projectsData = {
         category: 'Espacios Efímeros',
         heroImage: 'PORTFOLIO/MAS-CREATION/images/moodboard.jpg',
         description: `
-            <p>Proyecto de espacio efímero desarrollado en 2018 para la marca de mobiliario Mas Creations (Masquespacio). El diseño propone un flagship store ubicado en un container marítimo de 12 metros, transformando su geometría rígida mediante formas orgánicas, vidrios coloreados y estructuras de acero.</p>
+            <p>Diseño de flagship store para la marca de mobiliario Mas Creations (Masquespacio) ubicado en un container marítimo de 12 metros. El proyecto transforma la geometría rígida del contenedor mediante formas orgánicas, vidrios coloreados y estructuras de acero.</p>
             <p>El concepto se inspira en la icónica silla "Too Much Chair" de la marca, traduciendo su lenguaje formal al espacio arquitectónico. Los elementos curvos y el uso del color rompen deliberadamente con la ortogonalidad del contenedor, creando una experiencia espacial única.</p>
             <p>El proyecto incluye documentación técnica completa: moodboards conceptuales, alzados en color, planos de cubierta, especificaciones de acabados y renderizados que muestran la propuesta tanto en ambientación diurna como nocturna.</p>
         `,
