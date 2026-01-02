@@ -18,15 +18,16 @@ my-life/
 ├── index.html              # GitHub Pages - Página principal del portfolio
 ├── style.css               # Estilos del sitio web
 ├── README.md               # Descripción del repositorio
+├── auto-commit.sh          # Script de auto-commit y push
 ├── PORTFOLIO/              # Directorio con proyectos y documentos
 │   ├── BOM PROJECT.pdf
 │   ├── CURRICULUM ANA.pdf
 │   ├── MAS CREATION RED.pdf
-│   ├── PORTFOLIO INTERACTIVO.pdf
 │   ├── optimize_*.sh       # Scripts de optimización de PDFs
 │   ├── optimize_images.sh  # Script de optimización de imágenes
 │   └── optimized/          # Directorio para archivos optimizados
-└── .claude/                # Configuración de Claude Code
+├── .claude/                # Configuración de Claude Code
+└── .git/hooks/pre-push     # Hook automático para commits antes de push
 ```
 
 ## 🛠️ Tecnologías y Herramientas
@@ -69,6 +70,33 @@ my-life/
 
 ## 🔄 Flujos de Trabajo Comunes
 
+### 🤖 Auto-Commit (NUEVO)
+El repositorio incluye un sistema de automatización de commits:
+
+**Script Manual** - `./auto-commit.sh`
+```bash
+# Commit automático con mensaje personalizado
+./auto-commit.sh "Tu mensaje aquí"
+
+# Commit automático con mensaje generado
+./auto-commit.sh
+
+# El script te preguntará si quieres hacer push a GitHub
+```
+
+**Git Hook Pre-Push** - `.git/hooks/pre-push`
+- Se ejecuta automáticamente antes de cada `git push`
+- Detecta cambios sin commitear (modificados, nuevos, eliminados)
+- Crea un commit automático si hay cambios pendientes
+- Permite que el push continúe normalmente
+
+**Características:**
+- ✅ Detecta archivos modificados, nuevos y eliminados
+- ✅ Genera mensajes de commit descriptivos
+- ✅ Incluye colores en la salida para mejor legibilidad
+- ✅ Pregunta confirmación antes de hacer push (en script manual)
+- ✅ Hook automático asegura que no se olviden cambios
+
 ### Optimización de PDFs
 Los scripts en PORTFOLIO/ permiten optimizar PDFs de diferentes maneras:
 - `optimize_pdfs.sh` - Optimización básica
@@ -85,12 +113,14 @@ Los scripts en PORTFOLIO/ permiten optimizar PDFs de diferentes maneras:
 1. Agregar nuevos PDFs a PORTFOLIO/
 2. Optimizar si es necesario con los scripts disponibles
 3. Actualizar index.html con referencias a nuevos proyectos
-4. Commit y push para actualizar GitHub Pages
+4. Usar `./auto-commit.sh` para commit y push automático
+5. GitHub Pages se actualiza automáticamente
 
 ### Git Workflow
 - Branch principal: `main`
 - Commits descriptivos en español
 - Push a GitHub actualiza automáticamente GitHub Pages
+- **NUEVO**: Hook pre-push hace commit automático de cambios pendientes
 
 ## 🎯 Comandos Útiles
 
@@ -116,12 +146,16 @@ cd PORTFOLIO && ./optimize_images.sh
 # Ver estado
 git status
 
-# Commit cambios
+# Método RECOMENDADO: Auto-commit y push
+./auto-commit.sh "Descripción del cambio"
+
+# Método tradicional: Commit manual
 git add .
 git commit -m "Descripción del cambio"
 
 # Publicar a GitHub Pages
 git push origin main
+# (El hook pre-push hará commit automático si hay cambios pendientes)
 ```
 
 ## 🚫 Archivos a Ignorar
@@ -161,5 +195,5 @@ Este es un portfolio profesional personal que debe:
 - Añadir favicon personalizado
 - Considerar analytics (Google Analytics o similar)
 - Backup automático de archivos importantes
-- Script de deployment automatizado
+- ✅ ~~Script de deployment automatizado~~ (Implementado: auto-commit.sh)
 - Compresión automática de assets al hacer commit
