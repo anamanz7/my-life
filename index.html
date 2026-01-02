@@ -137,16 +137,16 @@
                     </article>
 
                     <article class="portfolio-card" data-category="diseño">
-                        <a href="PORTFOLIO/MAS CREATION RED.pdf" target="_blank" class="portfolio-link">
+                        <a href="#project/mas-creation" class="portfolio-link" onclick="openProject(event, 'mas-creation')">
                             <div class="portfolio-image-wrapper">
-                                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=1000&fit=crop" alt="MAS Creation Red" class="portfolio-image">
+                                <img src="PORTFOLIO/MAS-CREATION/images/moodboard.jpg" alt="MAS Creation - Moodboard" class="portfolio-image">
                                 <div class="portfolio-overlay"></div>
                             </div>
                             <div class="portfolio-info">
-                                <span class="portfolio-category">Identidad Visual</span>
-                                <h3 class="portfolio-title">MAS Creation Red</h3>
-                                <p class="portfolio-description">Desarrollo de identidad visual y diseño de espacios comerciales. Trabajo con cliente desde concepto hasta implementación.</p>
-                                <span class="portfolio-year">2023</span>
+                                <span class="portfolio-category">Proyecto Arquitectónico</span>
+                                <h3 class="portfolio-title">MAS Creation</h3>
+                                <p class="portfolio-description">Proyecto completo de diseño arquitectónico con moodboards, alzados, planos de cubierta y acabados. Desarrollo integral desde concepto hasta documentación técnica.</p>
+                                <span class="portfolio-year">2024</span>
                             </div>
                         </a>
                     </article>
@@ -184,6 +184,52 @@
             </div>
         </section>
     </main>
+
+    <!-- Vista de Proyecto Individual -->
+    <div id="project-view" class="project-view">
+        <!-- Header del Proyecto con Imagen Hero -->
+        <div class="project-hero">
+            <img id="project-hero-image" src="" alt="" class="project-hero-img">
+            <button class="project-close" onclick="closeProject()" aria-label="Cerrar proyecto">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="project-breadcrumb">
+                <a href="#portfolio" onclick="closeProject()">Portfolio</a>
+                <span>/</span>
+                <span id="project-breadcrumb-title"></span>
+            </div>
+        </div>
+
+        <!-- Contenido del Proyecto -->
+        <div class="project-content">
+            <div class="project-header">
+                <h1 id="project-title"></h1>
+                <div class="project-metadata">
+                    <span class="project-meta-item">
+                        <strong>Año:</strong> <span id="project-year"></span>
+                    </span>
+                    <span class="project-meta-item">
+                        <strong>Categoría:</strong> <span id="project-category"></span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="project-description" id="project-description"></div>
+
+            <!-- Grid de Imágenes del Proyecto -->
+            <div class="project-images-grid" id="project-images-grid"></div>
+
+            <!-- Botón para volver -->
+            <div class="project-footer">
+                <button class="btn btn-secondary" onclick="closeProject()">
+                    ← Volver al Portfolio
+                </button>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2026 Ana Manzanares. Todos los derechos reservados.</p>

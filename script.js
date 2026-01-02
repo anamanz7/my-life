@@ -330,3 +330,146 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 100);
 
 });
+
+// ====================================
+// DATOS DE PROYECTOS
+// ====================================
+const projectsData = {
+    'mas-creation': {
+        title: 'MAS Creation',
+        year: '2024',
+        category: 'Proyecto Arquitectónico',
+        heroImage: 'PORTFOLIO/MAS-CREATION/images/moodboard.jpg',
+        description: `
+            <p>MAS Creation es un proyecto arquitectónico integral que abarca desde el concepto inicial hasta la documentación técnica completa. Este proyecto representa un enfoque holístico del diseño, combinando elementos estéticos con soluciones funcionales.</p>
+            <p>El desarrollo incluye la creación de moodboards conceptuales, alzados detallados en color, planos de cubierta, especificaciones de acabados y bocetos preliminares. Cada elemento ha sido cuidadosamente diseñado para crear espacios que equilibran belleza y practicidad.</p>
+            <p>La documentación técnica refleja un proceso de diseño meticuloso, donde cada detalle ha sido considerado para garantizar la viabilidad constructiva y la coherencia estética del proyecto.</p>
+        `,
+        images: [
+            {
+                src: 'PORTFOLIO/MAS-CREATION/images/moodboard.jpg',
+                caption: 'Moodboard - Concepto y paleta de materiales'
+            },
+            {
+                src: 'PORTFOLIO/MAS-CREATION/images/alzado-color-a.jpg',
+                caption: 'Alzado Color A - Vista frontal'
+            },
+            {
+                src: 'PORTFOLIO/MAS-CREATION/images/alzado-color-b.jpg',
+                caption: 'Alzado Color B - Vista posterior'
+            },
+            {
+                src: 'PORTFOLIO/MAS-CREATION/images/alzados-transv-color.jpg',
+                caption: 'Alzados Transversales - Secciones'
+            },
+            {
+                src: 'PORTFOLIO/MAS-CREATION/images/plano-cubierta-color.jpg',
+                caption: 'Plano de Cubierta - Vista superior'
+            },
+            {
+                src: 'PORTFOLIO/MAS-CREATION/images/plano-acabados-color.jpg',
+                caption: 'Plano de Acabados - Especificaciones'
+            },
+            {
+                src: 'PORTFOLIO/MAS-CREATION/images/bocetos.jpg',
+                caption: 'Bocetos - Proceso creativo'
+            }
+        ]
+    }
+};
+
+// ====================================
+// VISTA DE PROYECTO INDIVIDUAL
+// ====================================
+function openProject(event, projectId) {
+    event.preventDefault();
+
+    const project = projectsData[projectId];
+    if (!project) {
+        console.error('Proyecto no encontrado:', projectId);
+        return;
+    }
+
+    // Obtener elementos del DOM
+    const projectView = document.getElementById('project-view');
+    const projectTitle = document.getElementById('project-title');
+    const projectYear = document.getElementById('project-year');
+    const projectCategory = document.getElementById('project-category');
+    const projectDescription = document.getElementById('project-description');
+    const projectHeroImage = document.getElementById('project-hero-image');
+    const projectBreadcrumbTitle = document.getElementById('project-breadcrumb-title');
+    const projectImagesGrid = document.getElementById('project-images-grid');
+
+    // Rellenar información del proyecto
+    projectTitle.textContent = project.title;
+    projectYear.textContent = project.year;
+    projectCategory.textContent = project.category;
+    projectDescription.innerHTML = project.description;
+    projectHeroImage.src = project.heroImage;
+    projectHeroImage.alt = project.title;
+    projectBreadcrumbTitle.textContent = project.title;
+
+    // Limpiar y rellenar grid de imágenes
+    projectImagesGrid.innerHTML = '';
+    project.images.forEach(image => {
+        const imageItem = document.createElement('div');
+        imageItem.className = 'project-image-item';
+        imageItem.innerHTML = `
+            <img src="${image.src}" alt="${image.caption}" loading="lazy">
+            <p class="project-image-caption">${image.caption}</p>
+        `;
+        projectImagesGrid.appendChild(imageItem);
+    });
+
+    // Mostrar vista del proyecto
+    projectView.classList.add('show');
+    document.body.style.overflow = 'hidden';
+
+    // Scroll al inicio de la vista del proyecto
+    projectView.scrollTop = 0;
+
+    // Actualizar URL sin recargar la página
+    history.pushState({ projectId: projectId }, '', `#project/${projectId}`);
+}
+
+function closeProject() {
+    const projectView = document.getElementById('project-view');
+    projectView.classList.remove('show');
+    document.body.style.overflow = '';
+
+    // Actualizar URL
+    history.pushState(null, '', '#portfolio');
+}
+
+// Cerrar proyecto con tecla ESC
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        const projectView = document.getElementById('project-view');
+        if (projectView && projectView.classList.contains('show')) {
+            closeProject();
+        }
+    }
+});
+
+// Manejar botón atrás del navegador
+window.addEventListener('popstate', function(event) {
+    const projectView = document.getElementById('project-view');
+    if (projectView && projectView.classList.contains('show')) {
+        closeProject();
+    }
+});
+
+// Cargar proyecto si la URL tiene hash #project/
+window.addEventListener('load', function() {
+    const hash = window.location.hash;
+    if (hash.startsWith('#project/')) {
+        const projectId = hash.replace('#project/', '');
+        if (projectsData[projectId]) {
+            // Esperar a que el DOM esté completamente cargado
+            setTimeout(() => {
+                const fakeEvent = { preventDefault: () => {} };
+                openProject(fakeEvent, projectId);
+            }, 100);
+        }
+    }
+});
