@@ -335,6 +335,57 @@ document.addEventListener('DOMContentLoaded', function() {
 // DATOS DE PROYECTOS
 // ====================================
 const projectsData = {
+    'bom': {
+        title: 'BOM',
+        year: '2024',
+        category: 'Espacios Comerciales',
+        heroImage: 'PORTFOLIO/BOM/imagenes/render-escaparate-1-ok.png',
+        description: `
+            <p>Proyecto de diseño de espacio comercial para tienda tradicional. El proyecto desarrolla un concepto de interiorismo que combina elementos orgánicos con una paleta de tonos tierra y rosa, creando una atmósfera cálida y envolvente.</p>
+            <p>El diseño se caracteriza por el uso de formas curvas y suaves que se reflejan en el mobiliario, la iluminación arquitectónica integrada y los detalles decorativos. El suelo de terrazo aporta textura y personalidad al espacio, mientras que los elementos esféricos y las superficies redondeadas generan un lenguaje formal coherente.</p>
+            <p>El proyecto incluye documentación completa: planos de planta, secciones técnicas, detalles constructivos del mostrador, bocetos conceptuales y renderizados que muestran diferentes perspectivas del espacio interior.</p>
+        `,
+        renderizados: [
+            {
+                src: 'PORTFOLIO/BOM/imagenes/render-escaparate-1-ok.png',
+                caption: 'Vista escaparate - Perspectiva principal'
+            },
+            {
+                src: 'PORTFOLIO/BOM/imagenes/render-escaparate-2.png',
+                caption: 'Vista escaparate - Ambiente nocturno'
+            },
+            {
+                src: 'PORTFOLIO/BOM/imagenes/render-1.png',
+                caption: 'Interior - Vista general'
+            },
+            {
+                src: 'PORTFOLIO/BOM/imagenes/render-2.png',
+                caption: 'Interior - Detalle espacial'
+            }
+        ],
+        planos: [
+            {
+                src: 'PORTFOLIO/BOM/planos/plano-planta.pdf',
+                caption: 'Plano de Planta - Distribución general'
+            },
+            {
+                src: 'PORTFOLIO/BOM/planos/plano-técnico-mostrador.pdf',
+                caption: 'Plano Técnico Mostrador - Detalles constructivos'
+            },
+            {
+                src: 'PORTFOLIO/BOM/planos/secciones.pdf',
+                caption: 'Secciones - Cortes del espacio'
+            },
+            {
+                src: 'PORTFOLIO/BOM/planos/seccion-2.pdf',
+                caption: 'Sección 2 - Detalle técnico'
+            },
+            {
+                src: 'PORTFOLIO/BOM/planos/bocetos.pdf',
+                caption: 'Bocetos - Proceso conceptual'
+            }
+        ]
+    },
     'mas-creation': {
         title: 'MAS Creation',
         year: '2018',
