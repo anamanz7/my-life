@@ -26,3 +26,29 @@ Temporary Items
 *.key
 *.pem
 secrets/
+
+# Archivos temporales
+*.tmp
+*.temp
+*.log
+*~
+*.swp
+*.bak
+
+# Backups
+backup/
+backups/
+*.backup
+
+# Node modules
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Directorios de optimización temporal
+PORTFOLIO/optimized/
+/tmp/
+
+# Archivos originales (mantener solo optimizados)
+# style.css (comentado - mantener por ahora para desarrollo)
+# script.js (comentado - mantener por ahora para desarrollo)
