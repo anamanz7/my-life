@@ -4,6 +4,138 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     // ======================
+    // CARRUSEL DE IMÁGENES
+    // ======================
+    const slides = document.querySelectorAll('.carousel-slide');
+    const indicators = document.querySelectorAll('.indicator');
+    const prevBtn = document.querySelector('.carousel-control.prev');
+    const nextBtn = document.querySelector('.carousel-control.next');
+    let currentSlide = 0;
+    let autoplayInterval;
+
+    // Función para mostrar slide específico
+    function showSlide(index) {
+        // Asegurar que el índice esté en rango
+        if (index >= slides.length) {
+            currentSlide = 0;
+        } else if (index < 0) {
+            currentSlide = slides.length - 1;
+        } else {
+            currentSlide = index;
+        }
+
+        // Remover clase active de todos los slides e indicadores
+        slides.forEach(slide => slide.classList.remove('active'));
+        indicators.forEach(indicator => indicator.classList.remove('active'));
+
+        // Añadir clase active al slide e indicador actual
+        slides[currentSlide].classList.add('active');
+        indicators[currentSlide].classList.add('active');
+    }
+
+    // Función para siguiente slide
+    function nextSlide() {
+        showSlide(currentSlide + 1);
+    }
+
+    // Función para slide anterior
+    function prevSlide() {
+        showSlide(currentSlide - 1);
+    }
+
+    // Event listeners para controles
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetAutoplay();
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetAutoplay();
+        });
+    }
+
+    // Event listeners para indicadores
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            showSlide(index);
+            resetAutoplay();
+        });
+    });
+
+    // Autoplay del carrusel
+    function startAutoplay() {
+        autoplayInterval = setInterval(nextSlide, 5000); // Cambia cada 5 segundos
+    }
+
+    function stopAutoplay() {
+        clearInterval(autoplayInterval);
+    }
+
+    function resetAutoplay() {
+        stopAutoplay();
+        startAutoplay();
+    }
+
+    // Iniciar autoplay si hay slides
+    if (slides.length > 0) {
+        startAutoplay();
+
+        // Pausar autoplay cuando el usuario pasa el mouse sobre el carrusel
+        const carouselContainer = document.querySelector('.carousel-container');
+        if (carouselContainer) {
+            carouselContainer.addEventListener('mouseenter', stopAutoplay);
+            carouselContainer.addEventListener('mouseleave', startAutoplay);
+        }
+    }
+
+    // Soporte para navegación con teclado
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            prevSlide();
+            resetAutoplay();
+        } else if (e.key === 'ArrowRight') {
+            nextSlide();
+            resetAutoplay();
+        }
+    });
+
+    // Soporte para gestos táctiles (swipe)
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    const carouselSlides = document.querySelector('.carousel-slides');
+    if (carouselSlides) {
+        carouselSlides.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        carouselSlides.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+    }
+
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                // Swipe left - siguiente
+                nextSlide();
+            } else {
+                // Swipe right - anterior
+                prevSlide();
+            }
+            resetAutoplay();
+        }
+    }
+
+    // ======================
     // MENÚ HAMBURGUESA MÓVIL
     // ======================
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');

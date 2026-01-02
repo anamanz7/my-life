@@ -46,10 +46,66 @@
     </header>
 
     <main>
-        <section id="hero">
-            <div class="hero-content">
-                <h2>Diseñadora de Interiores</h2>
-                <p>Marbella, España</p>
+        <!-- Carrusel de Imágenes Principal -->
+        <section id="carousel-hero">
+            <div class="carousel-container">
+                <div class="carousel-slides">
+                    <!-- Slide 1 -->
+                    <div class="carousel-slide active">
+                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1920&h=1080&fit=crop&q=80" alt="Proyecto 1">
+                        <div class="carousel-caption">
+                            <h2>Diseño de Interiores</h2>
+                            <p>Espacios únicos y personalizados</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&h=1080&fit=crop&q=80" alt="Proyecto 2">
+                        <div class="carousel-caption">
+                            <h2>Proyectos Residenciales</h2>
+                            <p>Elegancia y funcionalidad</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1920&h=1080&fit=crop&q=80" alt="Proyecto 3">
+                        <div class="carousel-caption">
+                            <h2>Interiorismo Premium</h2>
+                            <p>Atención al detalle</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1920&h=1080&fit=crop&q=80" alt="Proyecto 4">
+                        <div class="carousel-caption">
+                            <h2>Espacios Contemporáneos</h2>
+                            <p>Diseño y confort</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controles del Carrusel -->
+                <button class="carousel-control prev" aria-label="Anterior">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <button class="carousel-control next" aria-label="Siguiente">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+
+                <!-- Indicadores -->
+                <div class="carousel-indicators">
+                    <button class="indicator active" data-slide="0" aria-label="Ir a imagen 1"></button>
+                    <button class="indicator" data-slide="1" aria-label="Ir a imagen 2"></button>
+                    <button class="indicator" data-slide="2" aria-label="Ir a imagen 3"></button>
+                    <button class="indicator" data-slide="3" aria-label="Ir a imagen 4"></button>
+                </div>
             </div>
         </section>
 
