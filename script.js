@@ -337,13 +337,13 @@ document.addEventListener('DOMContentLoaded', function() {
 const projectsData = {
     'mas-creation': {
         title: 'MAS Creation',
-        year: '2024',
-        category: 'Proyecto Arquitectónico',
+        year: '2018',
+        category: 'Espacios Efímeros',
         heroImage: 'PORTFOLIO/MAS-CREATION/images/moodboard.jpg',
         description: `
-            <p>MAS Creation es un proyecto arquitectónico integral que abarca desde el concepto inicial hasta la documentación técnica completa. Este proyecto representa un enfoque holístico del diseño, combinando elementos estéticos con soluciones funcionales.</p>
-            <p>El desarrollo incluye la creación de moodboards conceptuales, alzados detallados en color, planos de cubierta, especificaciones de acabados y bocetos preliminares. Cada elemento ha sido cuidadosamente diseñado para crear espacios que equilibran belleza y practicidad.</p>
-            <p>La documentación técnica refleja un proceso de diseño meticuloso, donde cada detalle ha sido considerado para garantizar la viabilidad constructiva y la coherencia estética del proyecto.</p>
+            <p>Proyecto de espacio efímero desarrollado en 2018 para la marca de mobiliario Mas Creations (Masquespacio). El diseño propone un flagship store ubicado en un container marítimo de 12 metros, transformando su geometría rígida mediante formas orgánicas, vidrios coloreados y estructuras de acero.</p>
+            <p>El concepto se inspira en la icónica silla "Too Much Chair" de la marca, traduciendo su lenguaje formal al espacio arquitectónico. Los elementos curvos y el uso del color rompen deliberadamente con la ortogonalidad del contenedor, creando una experiencia espacial única.</p>
+            <p>El proyecto incluye documentación técnica completa: moodboards conceptuales, alzados en color, planos de cubierta, especificaciones de acabados y renderizados que muestran la propuesta tanto en ambientación diurna como nocturna.</p>
         `,
         renderizados: [
             {
