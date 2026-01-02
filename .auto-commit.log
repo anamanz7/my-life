@@ -61,3 +61,35 @@ To https://github.com/anamanz7/my-life.git
 [2026-01-02 19:04:37] === Verificación completada ===
 [2026-01-02 19:11:50] === Iniciando verificación automática ===
 [2026-01-02 19:11:50] Cambios detectados, creando commit...
+[main bae34c7] Auto-commit: 1 modificado(s), 4 nuevo(s), 9 eliminado(s)
+ Committer: Ana Manzanares <anamanzanares@MacBook-Pro-de-Ana.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 16 files changed, 223 insertions(+)
+ delete mode 100644 PORTFOLIO/BOM/BOM PROJECT (arrastrado).pdf
+ create mode 100644 PORTFOLIO/BOM/imagenes/BOM PROJECT (arrastrado)_page-0001.jpg
+ rename PORTFOLIO/BOM/{ => imagenes}/render-1.png (100%)
+ rename PORTFOLIO/BOM/{ => imagenes}/render-2.png (100%)
+ create mode 100644 PORTFOLIO/BOM/imagenes/render-escaparate-1-ok.png
+ create mode 100644 PORTFOLIO/BOM/imagenes/render-escaparate-1.jpg
+ create mode 100644 PORTFOLIO/BOM/imagenes/render-escaparate-2.png
+ rename PORTFOLIO/BOM/{ => planos}/bocetos.pdf (100%)
+ rename PORTFOLIO/BOM/{ => planos}/logo.pdf (100%)
+ rename PORTFOLIO/BOM/{ => planos}/plano-planta.pdf (100%)
+ rename "PORTFOLIO/BOM/plano-t\303\251cnico-mostrador.pdf" => "PORTFOLIO/BOM/planos/plano-t\303\251cnico-mostrador.pdf" (100%)
+ rename PORTFOLIO/BOM/{ => planos}/seccion-2.pdf (100%)
+ rename PORTFOLIO/BOM/{ => planos}/secciones.pdf (100%)
+ create mode 100755 manage-autocommit.sh
+ create mode 100644 test-autocommit.txt
+[2026-01-02 19:11:51] ✅ Commit creado exitosamente
+[1;33m🔍 Verificando cambios pendientes...[0m
+[1;33m📝 Cambios detectados. Creando commit automático...[0m
