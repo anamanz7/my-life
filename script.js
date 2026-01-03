@@ -242,12 +242,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 const sectionId = section.id;
 
                 // Detectar si es una sección con fondo claro
-                // Secciones claras: #about, #cv, y secciones pares
+                // Secciones claras: #about, #portfolio, #cv, y secciones pares
                 if (sectionId === 'about' ||
+                    sectionId === 'portfolio' ||
                     sectionId === 'cv' ||
                     section.classList.contains('cv-section') ||
                     bgColor.includes('248, 246, 244') || // --cream
-                    bgColor.includes('235, 230, 227')) { // --light-beige
+                    bgColor.includes('235, 230, 227') || // --light-beige
+                    bgColor.includes('255, 255, 255')) { // --white
                     isOverLightBackground = true;
                 }
             }
