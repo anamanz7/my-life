@@ -493,7 +493,7 @@ const projectsData = {
                 caption: 'Dormitorio Principal - Suite con vestidor'
             },
             {
-                src: 'PORTFOLIO/ECI/mijas/dormitorio-2.png',
+                src: 'PORTFOLIO/ECI/mijas/dormitorio-2-.PNG',
                 caption: 'Dormitorio Secundario - Diseño contemporáneo'
             },
             {
