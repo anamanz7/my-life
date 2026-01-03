@@ -40,10 +40,17 @@
         <!-- Menú Lateral -->
         <div id="mobile-menu" class="mobile-menu">
             <ul>
-                <li><a href="#about">Sobre mí</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#cv">CV</a></li>
-                <li><a href="#contact">Contacto</a></li>
+                <li><a href="#about" data-es="Sobre mí" data-en="About Me">Sobre mí</a></li>
+                <li><a href="#portfolio" data-es="Portfolio" data-en="Portfolio">Portfolio</a></li>
+                <li><a href="#cv" data-es="CV" data-en="CV">CV</a></li>
+                <li><a href="#contact" data-es="Contacto" data-en="Contact">Contacto</a></li>
+                <li class="language-switcher">
+                    <button id="language-toggle" class="language-btn" aria-label="Cambiar idioma">
+                        <span class="lang-option" data-lang="es">ES</span>
+                        <span class="lang-divider">|</span>
+                        <span class="lang-option active" data-lang="en">EN</span>
+                    </button>
+                </li>
             </ul>
         </div>
     </header>
@@ -59,7 +66,7 @@
                         <div class="carousel-caption">
                             <a href="#project/mas-creation" onclick="openProject(event, 'mas-creation')" class="carousel-caption-link">
                                 <h2>MAS Creation</h2>
-                                <p>Flagship Store - Espacios Efímeros</p>
+                                <p data-es="Flagship Store - Espacios Efímeros" data-en="Flagship Store - Ephemeral Spaces">Flagship Store - Espacios Efímeros</p>
                             </a>
                         </div>
                     </div>
@@ -70,7 +77,7 @@
                         <div class="carousel-caption">
                             <a href="#project/bom" onclick="openProject(event, 'bom')" class="carousel-caption-link">
                                 <h2>BOM</h2>
-                                <p>Bombonería Boutique - Espacios Comerciales</p>
+                                <p data-es="Bombonería Boutique - Espacios Comerciales" data-en="Boutique Chocolate Shop - Commercial Spaces">Bombonería Boutique - Espacios Comerciales</p>
                             </a>
                         </div>
                     </div>
@@ -81,7 +88,7 @@
                         <div class="carousel-caption">
                             <a href="#project/residencial" onclick="openProject(event, 'residencial')" class="carousel-caption-link">
                                 <h2>Casa Mijas</h2>
-                                <p>Proyecto Residencial - Interiorismo</p>
+                                <p data-es="Proyecto Residencial - Interiorismo" data-en="Residential Project - Interior Design">Proyecto Residencial - Interiorismo</p>
                             </a>
                         </div>
                     </div>
@@ -110,9 +117,9 @@
 
         <section id="about">
             <div class="container">
-                <h2>Sobre mí</h2>
-                <p>Trabajo en diseño de interiores desde 2022, especializándome en proyectos residenciales de alto nivel en la Costa del Sol. Gestiono proyectos completos desde el concepto inicial hasta la entrega final, coordinando equipos y trabajando directamente con clientes de diferentes culturas.</p>
-                <p>Me gradué en Estudios Superiores de Diseño de Interiores en la Escuela de Artes de Almería. Actualmente formo parte del equipo de Decor Studio en El Corte Inglés Puerto Banús, donde coordino una media de 30 proyectos al año.</p>
+                <h2 data-es="Sobre mí" data-en="About Me">Sobre mí</h2>
+                <p data-es="Trabajo en diseño de interiores desde 2022, especializándome en proyectos residenciales de alto nivel en la Costa del Sol. Gestiono proyectos completos desde el concepto inicial hasta la entrega final, coordinando equipos y trabajando directamente con clientes de diferentes culturas." data-en="I've been working in interior design since 2022, specializing in high-end residential projects on the Costa del Sol. I manage complete projects from initial concept to final delivery, coordinating teams and working directly with clients from different cultures.">Trabajo en diseño de interiores desde 2022, especializándome en proyectos residenciales de alto nivel en la Costa del Sol. Gestiono proyectos completos desde el concepto inicial hasta la entrega final, coordinando equipos y trabajando directamente con clientes de diferentes culturas.</p>
+                <p data-es="Me gradué en Estudios Superiores de Diseño de Interiores en la Escuela de Artes de Almería. Actualmente formo parte del equipo de Decor Studio en El Corte Inglés Puerto Banús, donde coordino una media de 30 proyectos al año." data-en="I graduated with a Higher Degree in Interior Design from the School of Arts in Almería. Currently, I'm part of the Decor Studio team at El Corte Inglés Puerto Banús, where I coordinate an average of 30 projects per year.">Me gradué en Estudios Superiores de Diseño de Interiores en la Escuela de Artes de Almería. Actualmente formo parte del equipo de Decor Studio en El Corte Inglés Puerto Banús, donde coordino una media de 30 proyectos al año.</p>
             </div>
         </section>
 
@@ -127,9 +134,9 @@
                                 <div class="portfolio-overlay"></div>
                             </div>
                             <div class="portfolio-info">
-                                <span class="portfolio-category">Espacios Efímeros</span>
+                                <span class="portfolio-category" data-es="Espacios Efímeros" data-en="Ephemeral Spaces">Espacios Efímeros</span>
                                 <h3 class="portfolio-title">MAS Creation - Flagship Store</h3>
-                                <p class="portfolio-description">Flagship store en container marítimo que fusiona formas orgánicas y vidrios coloreados con la identidad de Masquespacio.</p>
+                                <p class="portfolio-description" data-es="Flagship store en container marítimo que fusiona formas orgánicas y vidrios coloreados con la identidad de Masquespacio." data-en="Flagship store in a maritime container that merges organic forms and colored glass with Masquespacio's identity.">Flagship store en container marítimo que fusiona formas orgánicas y vidrios coloreados con la identidad de Masquespacio.</p>
                                 <span class="portfolio-year">2018</span>
                             </div>
                         </a>
@@ -142,9 +149,9 @@
                                 <div class="portfolio-overlay"></div>
                             </div>
                             <div class="portfolio-info">
-                                <span class="portfolio-category">Espacios Comerciales</span>
-                                <h3 class="portfolio-title">BOM - Bombonería Boutique</h3>
-                                <p class="portfolio-description">Bombonería boutique en edificio protegido que fusiona tradición y contemporaneidad con influencias Art Déco.</p>
+                                <span class="portfolio-category" data-es="Espacios Comerciales" data-en="Commercial Spaces">Espacios Comerciales</span>
+                                <h3 class="portfolio-title" data-es="BOM - Bombonería Boutique" data-en="BOM - Boutique Chocolate Shop">BOM - Bombonería Boutique</h3>
+                                <p class="portfolio-description" data-es="Bombonería boutique en edificio protegido que fusiona tradición y contemporaneidad con influencias Art Déco." data-en="Boutique chocolate shop in a protected building that merges tradition and contemporary design with Art Déco influences.">Bombonería boutique en edificio protegido que fusiona tradición y contemporaneidad con influencias Art Déco.</p>
                                 <span class="portfolio-year">2024</span>
                             </div>
                         </a>
@@ -157,9 +164,9 @@
                                 <div class="portfolio-overlay"></div>
                             </div>
                             <div class="portfolio-info">
-                                <span class="portfolio-category">Interiorismo Residencial</span>
-                                <h3 class="portfolio-title">Casa Mijas - Proyecto Residencial</h3>
-                                <p class="portfolio-description">Diseño de interiores para vivienda residencial en Mijas, fusionando elegancia contemporánea con comodidad mediterránea.</p>
+                                <span class="portfolio-category" data-es="Interiorismo Residencial" data-en="Residential Interior Design">Interiorismo Residencial</span>
+                                <h3 class="portfolio-title" data-es="Casa Mijas - Proyecto Residencial" data-en="Casa Mijas - Residential Project">Casa Mijas - Proyecto Residencial</h3>
+                                <p class="portfolio-description" data-es="Diseño de interiores para vivienda residencial en Mijas, fusionando elegancia contemporánea con comodidad mediterránea." data-en="Interior design for a residential home in Mijas, merging contemporary elegance with Mediterranean comfort.">Diseño de interiores para vivienda residencial en Mijas, fusionando elegancia contemporánea con comodidad mediterránea.</p>
                                 <span class="portfolio-year">2024</span>
                             </div>
                         </a>
@@ -170,16 +177,16 @@
 
         <section id="cv">
             <div class="container">
-                <h2>Curriculum</h2>
-                <p>Experiencia profesional, formación académica y herramientas de trabajo.</p>
-                <a href="cv.html" class="btn btn-primary">Ver CV Completo</a>
+                <h2 data-es="Curriculum" data-en="Resume">Curriculum</h2>
+                <p data-es="Experiencia profesional, formación académica y herramientas de trabajo." data-en="Professional experience, academic background and work tools.">Experiencia profesional, formación académica y herramientas de trabajo.</p>
+                <a href="cv.html" class="btn btn-primary" data-es="Ver CV Completo" data-en="View Full Resume">Ver CV Completo</a>
             </div>
         </section>
 
         <section id="contact">
             <div class="container">
-                <h2>Contacto</h2>
-                <p>Si quieres hablar sobre un proyecto o simplemente conectar, estaré encantada de escucharte.</p>
+                <h2 data-es="Contacto" data-en="Contact">Contacto</h2>
+                <p data-es="Si quieres hablar sobre un proyecto o simplemente conectar, estaré encantada de escucharte." data-en="If you want to talk about a project or simply connect, I'd be happy to hear from you.">Si quieres hablar sobre un proyecto o simplemente conectar, estaré encantada de escucharte.</p>
             </div>
         </section>
     </main>
@@ -196,7 +203,7 @@
                 </svg>
             </button>
             <div class="project-breadcrumb">
-                <a href="#portfolio" onclick="closeProject()">Portfolio</a>
+                <a href="#portfolio" onclick="closeProject()" data-es="Portfolio" data-en="Portfolio">Portfolio</a>
                 <span>/</span>
                 <span id="project-breadcrumb-title"></span>
             </div>
@@ -208,10 +215,10 @@
                 <h1 id="project-title"></h1>
                 <div class="project-metadata">
                     <span class="project-meta-item">
-                        <strong>Año:</strong> <span id="project-year"></span>
+                        <strong data-es="Año:" data-en="Year:">Año:</strong> <span id="project-year"></span>
                     </span>
                     <span class="project-meta-item">
-                        <strong>Categoría:</strong> <span id="project-category"></span>
+                        <strong data-es="Categoría:" data-en="Category:">Categoría:</strong> <span id="project-category"></span>
                     </span>
                 </div>
             </div>
@@ -227,7 +234,7 @@
 
             <!-- Botón para volver -->
             <div class="project-footer">
-                <button class="btn btn-secondary" onclick="closeProject()">
+                <button class="btn btn-secondary" onclick="closeProject()" data-es="← Volver al Portfolio" data-en="← Back to Portfolio">
                     ← Volver al Portfolio
                 </button>
             </div>
@@ -235,7 +242,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Ana Manzanares. Todos los derechos reservados.</p>
+        <p data-es="&copy; 2026 Ana Manzanares. Todos los derechos reservados." data-en="&copy; 2026 Ana Manzanares. All rights reserved.">&copy; 2026 Ana Manzanares. Todos los derechos reservados.</p>
     </footer>
 
     <script src="script.js?v=1.0.5"></script>

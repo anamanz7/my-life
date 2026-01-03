@@ -332,173 +332,205 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ====================================
-// DATOS DE PROYECTOS
+// SISTEMA DE TRADUCCIÓN
 // ====================================
+let currentLanguage = 'es'; // Idioma por defecto: español
+
 const projectsData = {
     'bom': {
         title: 'BOM',
         year: '2024',
-        category: 'Espacios Comerciales',
+        category: {
+            es: 'Espacios Comerciales',
+            en: 'Commercial Spaces'
+        },
         heroImage: 'PORTFOLIO/BOM/imagenes/render-escaparate-1-ok.png',
-        description: `
-            <p>Diseño de bombonería boutique de nivel medio-alto en el centro de Almería, Calle Gerona. Espacio comercial en edificio protegido por patrimonio que fusiona tradición y contemporaneidad con influencias Art Déco.</p>
-            <p>El diseño integra zona de venta, exposición, taller artesanal, degustación y cámara frigorífica. Inspirado en la semilla del cacao y moldes de bombones, el proyecto crea volúmenes orgánicos con paleta tierra-rosa, terrazo y elementos esféricos.</p>
-            <p>Elegancia, sostenibilidad y funcionalidad convergen en un espacio envolvente para productos exclusivos. El proyecto incluye documentación completa: planos de planta, secciones técnicas, detalles constructivos del mostrador, bocetos conceptuales y renderizados que muestran diferentes perspectivas del espacio interior.</p>
-        `,
+        description: {
+            es: `
+                <p>Diseño de bombonería boutique de nivel medio-alto en el centro de Almería, Calle Gerona. Espacio comercial en edificio protegido por patrimonio que fusiona tradición y contemporaneidad con influencias Art Déco.</p>
+                <p>El diseño integra zona de venta, exposición, taller artesanal, degustación y cámara frigorífica. Inspirado en la semilla del cacao y moldes de bombones, el proyecto crea volúmenes orgánicos con paleta tierra-rosa, terrazo y elementos esféricos.</p>
+                <p>Elegancia, sostenibilidad y funcionalidad convergen en un espacio envolvente para productos exclusivos. El proyecto incluye documentación completa: planos de planta, secciones técnicas, detalles constructivos del mostrador, bocetos conceptuales y renderizados que muestran diferentes perspectivas del espacio interior.</p>
+            `,
+            en: `
+                <p>Design of a medium-high level boutique chocolate shop in the center of Almería, Gerona Street. Commercial space in a heritage-protected building that merges tradition and contemporary design with Art Déco influences.</p>
+                <p>The design integrates sales area, exhibition, artisan workshop, tasting area and cold storage. Inspired by cocoa seeds and chocolate molds, the project creates organic volumes with an earth-rose palette, terrazzo and spherical elements.</p>
+                <p>Elegance, sustainability and functionality converge in an enveloping space for exclusive products. The project includes complete documentation: floor plans, technical sections, counter construction details, conceptual sketches and renderings showing different perspectives of the interior space.</p>
+            `
+        },
         renderizados: [
             {
                 src: 'PORTFOLIO/BOM/imagenes/render-1.png',
-                caption: 'Interior - Vista general'
+                caption: { es: 'Interior - Vista general', en: 'Interior - General view' }
             },
             {
                 src: 'PORTFOLIO/BOM/imagenes/render-2.png',
-                caption: 'Interior - Detalle espacial'
+                caption: { es: 'Interior - Detalle espacial', en: 'Interior - Spatial detail' }
             },
             {
                 src: 'PORTFOLIO/BOM/imagenes/render-escaparate-1-ok.png',
-                caption: 'Vista escaparate - Perspectiva principal'
+                caption: { es: 'Vista escaparate - Perspectiva principal', en: 'Storefront view - Main perspective' }
             },
             {
                 src: 'PORTFOLIO/BOM/imagenes/render-escaparate-2.png',
-                caption: 'Vista escaparate - Ambiente nocturno'
+                caption: { es: 'Vista escaparate - Ambiente nocturno', en: 'Storefront view - Night ambiance' }
             }
         ],
         planos: [
             {
                 src: 'PORTFOLIO/BOM/planos/logo.jpg',
-                caption: 'Logo y Branding del Proyecto'
+                caption: { es: 'Logo y Branding del Proyecto', en: 'Project Logo and Branding' }
             },
             {
                 src: 'PORTFOLIO/BOM/planos/plano-planta.jpg',
-                caption: 'Planta General - Distribución del Espacio'
+                caption: { es: 'Planta General - Distribución del Espacio', en: 'General Floor Plan - Space Distribution' }
             },
             {
                 src: 'PORTFOLIO/BOM/planos/secciones.jpg',
-                caption: 'Secciones del Proyecto'
+                caption: { es: 'Secciones del Proyecto', en: 'Project Sections' }
             },
             {
                 src: 'PORTFOLIO/BOM/planos/seccion-2.jpg',
-                caption: 'Sección Detallada'
+                caption: { es: 'Sección Detallada', en: 'Detailed Section' }
             },
             {
                 src: 'PORTFOLIO/BOM/planos/plano-técnico-mostrador.jpg',
-                caption: 'Detalle Técnico del Mostrador'
+                caption: { es: 'Detalle Técnico del Mostrador', en: 'Counter Technical Detail' }
             },
             {
                 src: 'PORTFOLIO/BOM/planos/bocetos.jpg',
-                caption: 'Bocetos Conceptuales'
+                caption: { es: 'Bocetos Conceptuales', en: 'Conceptual Sketches' }
             }
         ]
     },
     'mas-creation': {
         title: 'MAS Creation',
         year: '2018',
-        category: 'Espacios Efímeros',
+        category: {
+            es: 'Espacios Efímeros',
+            en: 'Ephemeral Spaces'
+        },
         heroImage: 'PORTFOLIO/MAS-CREATION/images/moodboard.jpg',
-        description: `
-            <p>Diseño de flagship store para la marca de mobiliario Mas Creations (Masquespacio) ubicado en un container marítimo de 12 metros. El proyecto transforma la geometría rígida del contenedor mediante formas orgánicas, vidrios coloreados y estructuras de acero.</p>
-            <p>El concepto se inspira en la icónica silla "Too Much Chair" de la marca, traduciendo su lenguaje formal al espacio arquitectónico. Los elementos curvos y el uso del color rompen deliberadamente con la ortogonalidad del contenedor, creando una experiencia espacial única.</p>
-            <p>El proyecto incluye documentación técnica completa: moodboards conceptuales, alzados en color, planos de cubierta, especificaciones de acabados y renderizados que muestran la propuesta tanto en ambientación diurna como nocturna.</p>
-        `,
+        description: {
+            es: `
+                <p>Diseño de flagship store para la marca de mobiliario Mas Creations (Masquespacio) ubicado en un container marítimo de 12 metros. El proyecto transforma la geometría rígida del contenedor mediante formas orgánicas, vidrios coloreados y estructuras de acero.</p>
+                <p>El concepto se inspira en la icónica silla "Too Much Chair" de la marca, traduciendo su lenguaje formal al espacio arquitectónico. Los elementos curvos y el uso del color rompen deliberadamente con la ortogonalidad del contenedor, creando una experiencia espacial única.</p>
+                <p>El proyecto incluye documentación técnica completa: moodboards conceptuales, alzados en color, planos de cubierta, especificaciones de acabados y renderizados que muestran la propuesta tanto en ambientación diurna como nocturna.</p>
+            `,
+            en: `
+                <p>Flagship store design for furniture brand Mas Creations (Masquespacio) located in a 12-meter maritime container. The project transforms the rigid geometry of the container through organic forms, colored glass and steel structures.</p>
+                <p>The concept is inspired by the brand's iconic "Too Much Chair", translating its formal language into architectural space. Curved elements and the use of color deliberately break with the orthogonality of the container, creating a unique spatial experience.</p>
+                <p>The project includes complete technical documentation: conceptual moodboards, color elevations, roof plans, finish specifications and renderings showing the proposal in both daytime and nighttime settings.</p>
+            `
+        },
         renderizados: [
             {
                 src: 'PORTFOLIO/MAS-CREATION/images/1 DIA HORIZ.jpg',
-                caption: 'Renderizado Día - Vista panorámica'
+                caption: { es: 'Renderizado Día - Vista panorámica', en: 'Day Rendering - Panoramic view' }
             },
             {
                 src: 'PORTFOLIO/MAS-CREATION/images/1 NOCHE.jpg',
-                caption: 'Renderizado Noche - Iluminación exterior'
+                caption: { es: 'Renderizado Noche - Iluminación exterior', en: 'Night Rendering - Exterior lighting' }
             },
             {
                 src: 'PORTFOLIO/MAS-CREATION/images/2 DIA.jpg',
-                caption: 'Vista Día - Espacio principal'
+                caption: { es: 'Vista Día - Espacio principal', en: 'Day View - Main space' }
             },
             {
                 src: 'PORTFOLIO/MAS-CREATION/images/2 NOCHE.jpg',
-                caption: 'Vista Noche - Ambiente nocturno'
+                caption: { es: 'Vista Noche - Ambiente nocturno', en: 'Night View - Night ambiance' }
             },
             {
                 src: 'PORTFOLIO/MAS-CREATION/images/3 DIA.jpg',
-                caption: 'Detalle Día - Interior'
+                caption: { es: 'Detalle Día - Interior', en: 'Day Detail - Interior' }
             },
             {
                 src: 'PORTFOLIO/MAS-CREATION/images/3 NOCHE.jpg',
-                caption: 'Detalle Noche - Iluminación interior'
+                caption: { es: 'Detalle Noche - Iluminación interior', en: 'Night Detail - Interior lighting' }
             },
             {
                 src: 'PORTFOLIO/MAS-CREATION/images/5 DIA.png',
-                caption: 'Concepto Día - Perspectiva general'
+                caption: { es: 'Concepto Día - Perspectiva general', en: 'Day Concept - General perspective' }
             },
             {
                 src: 'PORTFOLIO/MAS-CREATION/images/5 NOCHE.png',
-                caption: 'Concepto Noche - Vista completa'
+                caption: { es: 'Concepto Noche - Vista completa', en: 'Night Concept - Complete view' }
             }
         ],
         planos: [
             {
                 src: 'PORTFOLIO/MAS-CREATION/images/moodboard.jpg',
-                caption: 'Moodboard - Concepto y paleta de materiales'
+                caption: { es: 'Moodboard - Concepto y paleta de materiales', en: 'Moodboard - Concept and material palette' }
             },
             {
                 src: 'PORTFOLIO/MAS-CREATION/images/alzado-color-a.jpg',
-                caption: 'Alzado Color A - Vista frontal'
+                caption: { es: 'Alzado Color A - Vista frontal', en: 'Color Elevation A - Front view' }
             },
             {
                 src: 'PORTFOLIO/MAS-CREATION/images/alzado-color-b.jpg',
-                caption: 'Alzado Color B - Vista posterior'
+                caption: { es: 'Alzado Color B - Vista posterior', en: 'Color Elevation B - Rear view' }
             },
             {
                 src: 'PORTFOLIO/MAS-CREATION/images/alzados-transv-color.jpg',
-                caption: 'Alzados Transversales - Secciones'
+                caption: { es: 'Alzados Transversales - Secciones', en: 'Cross Elevations - Sections' }
             },
             {
                 src: 'PORTFOLIO/MAS-CREATION/images/plano-cubierta-color.jpg',
-                caption: 'Plano de Cubierta - Vista superior'
+                caption: { es: 'Plano de Cubierta - Vista superior', en: 'Roof Plan - Top view' }
             },
             {
                 src: 'PORTFOLIO/MAS-CREATION/images/plano-acabados-color.jpg',
-                caption: 'Plano de Acabados - Especificaciones'
+                caption: { es: 'Plano de Acabados - Especificaciones', en: 'Finishes Plan - Specifications' }
             },
             {
                 src: 'PORTFOLIO/MAS-CREATION/images/bocetos.jpg',
-                caption: 'Bocetos - Proceso creativo'
+                caption: { es: 'Bocetos - Proceso creativo', en: 'Sketches - Creative process' }
             }
         ]
     },
     'residencial': {
-        title: 'Casa Mijas - Proyecto Residencial',
+        title: 'Casa Mijas',
         year: '2024',
-        category: 'Interiorismo Residencial',
+        category: {
+            es: 'Interiorismo Residencial',
+            en: 'Residential Interior Design'
+        },
         heroImage: 'PORTFOLIO/ECI/mijas/comedor.png',
-        description: `
-            <p>Diseño de interiores para vivienda residencial en Mijas, Costa del Sol. El proyecto combina elegancia contemporánea con el carácter cálido del estilo mediterráneo, creando espacios que fusionan funcionalidad y sofisticación.</p>
-            <p>El concepto se desarrolla entorno a la luz natural, materiales nobles y paletas neutras que dialogan con el entorno. Cada espacio ha sido cuidadosamente diseñado para ofrecer confort y distinción, manteniendo coherencia visual en toda la vivienda.</p>
-            <p>El proyecto incluye visualizaciones fotorrealistas de los espacios principales: salón, comedor, dormitorios y entrada, mostrando la propuesta integral de interiorismo con acabados de alto nivel y diseño contemporáneo mediterráneo.</p>
-        `,
+        description: {
+            es: `
+                <p>Diseño de interiores para vivienda residencial en Mijas, Costa del Sol. El proyecto combina elegancia contemporánea con el carácter cálido del estilo mediterráneo, creando espacios que fusionan funcionalidad y sofisticación.</p>
+                <p>El concepto se desarrolla entorno a la luz natural, materiales nobles y paletas neutras que dialogan con el entorno. Cada espacio ha sido cuidadosamente diseñado para ofrecer confort y distinción, manteniendo coherencia visual en toda la vivienda.</p>
+                <p>El proyecto incluye visualizaciones fotorrealistas de los espacios principales: salón, comedor, dormitorios y entrada, mostrando la propuesta integral de interiorismo con acabados de alto nivel y diseño contemporáneo mediterráneo.</p>
+            `,
+            en: `
+                <p>Interior design for a residential home in Mijas, Costa del Sol. The project combines contemporary elegance with the warm character of Mediterranean style, creating spaces that merge functionality and sophistication.</p>
+                <p>The concept develops around natural light, noble materials and neutral palettes that dialogue with the surroundings. Each space has been carefully designed to offer comfort and distinction, maintaining visual coherence throughout the home.</p>
+                <p>The project includes photorealistic visualizations of the main spaces: living room, dining room, bedrooms and entrance, showing the comprehensive interior design proposal with high-end finishes and contemporary Mediterranean design.</p>
+            `
+        },
         renderizados: [
             {
                 src: 'PORTFOLIO/ECI/mijas/entrada.png',
-                caption: 'Entrada - Recibidor elegante'
+                caption: { es: 'Entrada - Recibidor elegante', en: 'Entrance - Elegant foyer' }
             },
             {
                 src: 'PORTFOLIO/ECI/mijas/comedor.png',
-                caption: 'Comedor - Espacio de reunión familiar'
+                caption: { es: 'Comedor - Espacio de reunión familiar', en: 'Dining Room - Family gathering space' }
             },
             {
                 src: 'PORTFOLIO/ECI/mijas/salon.png',
-                caption: 'Salón - Vista general con luz natural'
+                caption: { es: 'Salón - Vista general con luz natural', en: 'Living Room - General view with natural light' }
             },
             {
                 src: 'PORTFOLIO/ECI/mijas/dormitorio-ppal.png',
-                caption: 'Dormitorio Principal - Suite con vestidor'
+                caption: { es: 'Dormitorio Principal - Suite con vestidor', en: 'Master Bedroom - Suite with walk-in closet' }
             },
             {
                 src: 'PORTFOLIO/ECI/mijas/dormitorio-2-.PNG',
-                caption: 'Dormitorio Secundario - Diseño contemporáneo'
+                caption: { es: 'Dormitorio Secundario - Diseño contemporáneo', en: 'Secondary Bedroom - Contemporary design' }
             },
             {
                 src: 'PORTFOLIO/ECI/mijas/dormitorio-3.jpeg',
-                caption: 'Dormitorio Infantil - Espacio acogedor'
+                caption: { es: 'Dormitorio Infantil - Espacio acogedor', en: "Children's Bedroom - Cozy space" }
             }
         ],
         planos: []
@@ -531,8 +563,8 @@ function openProject(event, projectId) {
     // Rellenar información del proyecto
     projectTitle.textContent = project.title;
     projectYear.textContent = project.year;
-    projectCategory.textContent = project.category;
-    projectDescription.innerHTML = project.description;
+    projectCategory.textContent = typeof project.category === 'object' ? project.category[currentLanguage] : project.category;
+    projectDescription.innerHTML = typeof project.description === 'object' ? project.description[currentLanguage] : project.description;
     projectHeroImage.src = project.heroImage;
     projectHeroImage.alt = project.title;
     projectBreadcrumbTitle.textContent = project.title;
