@@ -1420,3 +1420,46 @@ To https://github.com/anamanz7/my-life.git
 [2026-01-03 19:43:49] === Verificación completada ===
 [2026-01-03 19:53:49] === Iniciando verificación automática ===
 [2026-01-03 19:53:49] Cambios detectados, creando commit...
+[main c4f5f76] Auto-commit: 3 modificado(s), 1 nuevo(s), 23 eliminado(s)
+ Committer: Ana Manzanares <anamanzanares@MacBook-Pro-de-Ana.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 29 files changed, 64 insertions(+), 503 deletions(-)
+ create mode 100644 PORTFOLIO/ECI/villa-1/ChatGPT Image 3 ene 2026, 17_28_49.png
+ create mode 100644 PORTFOLIO/ECI/villa-1/ChatGPT Image 3 ene 2026, 17_46_39.png
+ create mode 100644 PORTFOLIO/ECI/villa-1/ChatGPT Image 3 ene 2026, 18_30_45.png
+ delete mode 100644 PORTFOLIO/bom_planos/01_portada.jpg
+ delete mode 100644 PORTFOLIO/bom_planos/07_alzado_proyectado.jpg
+ delete mode 100644 PORTFOLIO/bom_planos/08_planta_proyectada.jpg
+ delete mode 100644 PORTFOLIO/bom_planos/09_secciones_longitudinales.jpg
+ delete mode 100644 PORTFOLIO/bom_planos/10_seccion_transversal.jpg
+ delete mode 100644 PORTFOLIO/bom_planos/11_planta_mobiliario.jpg
+ delete mode 100644 PORTFOLIO/bom_planos/12_secciones_mobiliario_A_C.jpg
+ delete mode 100644 PORTFOLIO/bom_planos/13_seccion_mobiliario_B.jpg
+ delete mode 100644 PORTFOLIO/bom_planos/18_detalle_taller.jpg
+ delete mode 100644 PORTFOLIO/bom_planos/19_detalle_constructivo.jpg
+ delete mode 100644 PORTFOLIO/bom_planos/20_planta_mobiliario_color.jpg
+ delete mode 100644 PORTFOLIO/bom_planos/23_pavimentos.jpg
+ delete mode 100644 PORTFOLIO/bom_planos/27_planta_mobiliario_equipamiento.jpg
+ delete mode 100644 PORTFOLIO/bom_planos/28_planta_iluminaria.jpg
+ delete mode 100644 PORTFOLIO/bom_planos/CHANGELOG.md
+ delete mode 100644 PORTFOLIO/bom_planos/README.md
+ delete mode 100644 PORTFOLIO/bom_planos/galeria.html
+ delete mode 100644 PORTFOLIO/bom_planos/render_01.jpg
+ delete mode 100644 PORTFOLIO/bom_planos/render_02.jpg
+ delete mode 100644 PORTFOLIO/bom_planos/render_03.jpg
+ delete mode 100644 PORTFOLIO/bom_planos/render_04.jpg
+ delete mode 100644 PORTFOLIO/bom_planos/render_05.jpg
+ delete mode 100644 PORTFOLIO/bom_planos/render_06.jpg
+[2026-01-03 19:53:49] ✅ Commit creado exitosamente
+[1;33m🔍 Verificando cambios pendientes...[0m
+[1;33m📝 Cambios detectados. Creando commit automático...[0m
