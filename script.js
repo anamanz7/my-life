@@ -575,9 +575,10 @@ function openProject(event, projectId) {
         project.renderizados.forEach((image, index) => {
             const imageItem = document.createElement('div');
             imageItem.className = 'project-image-item';
+            const caption = typeof image.caption === 'object' ? image.caption[currentLanguage] : image.caption;
             imageItem.innerHTML = `
-                <img src="${image.src}" alt="${image.caption}" loading="lazy" class="project-thumbnail" data-index="${index}" data-type="renderizados">
-                <p class="project-image-caption">${image.caption}</p>
+                <img src="${image.src}" alt="${caption}" loading="lazy" class="project-thumbnail" data-index="${index}" data-type="renderizados">
+                <p class="project-image-caption">${caption}</p>
             `;
             projectRenderizadosGrid.appendChild(imageItem);
         });
@@ -589,9 +590,11 @@ function openProject(event, projectId) {
         project.planos.forEach((image, index) => {
             const imageItem = document.createElement('div');
             imageItem.className = 'project-image-item';
+            const caption = typeof image.caption === 'object' ? image.caption[currentLanguage] : image.caption;
 
             // Si es PDF, mostrar con un ícono especial
             const isPDF = image.src.toLowerCase().endsWith('.pdf');
+            const pdfLabel = currentLanguage === 'es' ? 'Ver plano técnico' : 'View technical plan';
             const thumbnailHTML = isPDF
                 ? `<div class="pdf-thumbnail" data-index="${index}" data-type="planos" data-pdf="${image.src}">
                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -599,13 +602,13 @@ function openProject(event, projectId) {
                        <polyline points="14 2 14 8 20 8"></polyline>
                        <text x="12" y="16" text-anchor="middle" fill="currentColor" font-size="6" font-weight="600">PDF</text>
                      </svg>
-                     <span class="pdf-label">Ver plano técnico</span>
+                     <span class="pdf-label">${pdfLabel}</span>
                    </div>`
-                : `<img src="${image.src}" alt="${image.caption}" loading="lazy" class="project-thumbnail" data-index="${index}" data-type="planos">`;
+                : `<img src="${image.src}" alt="${caption}" loading="lazy" class="project-thumbnail" data-index="${index}" data-type="planos">`;
 
             imageItem.innerHTML = `
                 ${thumbnailHTML}
-                <p class="project-image-caption">${image.caption}</p>
+                <p class="project-image-caption">${caption}</p>
             `;
             projectPlanosGrid.appendChild(imageItem);
         });
@@ -782,4 +785,103 @@ document.addEventListener('keydown', function(e) {
             lightboxPrev();
         }
     }
+});
+
+// ====================================
+// SISTEMA DE CAMBIO DE IDIOMA
+// ====================================
+
+// Función para cambiar el idioma de todos los elementos
+function switchLanguage(lang) {
+    currentLanguage = lang;
+
+    // Guardar preferencia en localStorage
+    localStorage.setItem('preferredLanguage', lang);
+
+    // Actualizar atributo lang del HTML
+    document.documentElement.lang = lang;
+
+    // Actualizar todos los elementos con atributos data-es y data-en
+    const translatableElements = document.querySelectorAll('[data-es][data-en]');
+    translatableElements.forEach(element => {
+        const translation = element.getAttribute(`data-${lang}`);
+        if (translation) {
+            // Si es un enlace o botón, actualizar textContent
+            if (element.tagName === 'A' || element.tagName === 'BUTTON' || element.tagName === 'SPAN' || element.tagName === 'STRONG') {
+                element.textContent = translation;
+            } else {
+                // Para otros elementos, usar innerHTML para preservar HTML entities
+                element.innerHTML = translation;
+            }
+        }
+    });
+
+    // Actualizar botón de idioma
+    updateLanguageButton(lang);
+
+    // Si hay un proyecto abierto, recargarlo con el nuevo idioma
+    const projectView = document.getElementById('project-view');
+    if (projectView && projectView.classList.contains('show')) {
+        const hash = window.location.hash;
+        if (hash.startsWith('#project/')) {
+            const projectId = hash.replace('#project/', '');
+            if (projectsData[projectId]) {
+                const fakeEvent = { preventDefault: () => {} };
+                openProject(fakeEvent, projectId);
+            }
+        }
+    }
+}
+
+// Función para actualizar el estado visual del botón de idioma
+function updateLanguageButton(lang) {
+    const langOptions = document.querySelectorAll('.lang-option');
+    langOptions.forEach(option => {
+        if (option.dataset.lang === lang) {
+            option.classList.add('active');
+        } else {
+            option.classList.remove('active');
+        }
+    });
+}
+
+// Inicializar el sistema de idiomas cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', function() {
+    // Cargar idioma preferido del localStorage o usar español por defecto
+    const savedLanguage = localStorage.getItem('preferredLanguage') || 'es';
+    currentLanguage = savedLanguage;
+
+    // Aplicar idioma guardado
+    if (savedLanguage !== 'es') {
+        switchLanguage(savedLanguage);
+    } else {
+        updateLanguageButton('es');
+    }
+
+    // Event listener para el botón de cambio de idioma
+    const languageToggle = document.getElementById('language-toggle');
+    if (languageToggle) {
+        languageToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            // Alternar entre español e inglés
+            const newLang = currentLanguage === 'es' ? 'en' : 'es';
+            switchLanguage(newLang);
+        });
+    }
+
+    // Event listeners para las opciones de idioma individuales
+    const langOptions = document.querySelectorAll('.lang-option');
+    langOptions.forEach(option => {
+        option.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const selectedLang = this.dataset.lang;
+            if (selectedLang !== currentLanguage) {
+                switchLanguage(selectedLang);
+            }
+        });
+    });
 });
