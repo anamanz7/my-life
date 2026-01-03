@@ -2131,3 +2131,20 @@ To https://github.com/anamanz7/my-life.git
 [2026-01-03 21:54:44] === Verificación completada ===
 [2026-01-03 22:04:44] === Iniciando verificación automática ===
 [2026-01-03 22:04:44] Cambios detectados, creando commit...
+[main 7f9ef7d] Auto-commit: 2 modificado(s)
+ Committer: Ana Manzanares <anamanzanares@MacBook-Pro-de-Ana.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 3 files changed, 26 insertions(+), 1 deletion(-)
+[2026-01-03 22:04:45] ✅ Commit creado exitosamente
+[1;33m🔍 Verificando cambios pendientes...[0m
+[1;33m📝 Cambios detectados. Creando commit automático...[0m
