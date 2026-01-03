@@ -70,28 +70,22 @@ html {
 }
 
 header {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    background: transparent;
     color: var(--dark-text);
     padding: 1.5rem 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     transition: all 0.4s ease;
 }
 
 header.scrolled {
     padding: 0.8rem 0;
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 header.scrolled h1 {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
 }
 
 header nav {
@@ -106,7 +100,7 @@ header nav {
 
 header h1 {
     font-family: 'Fabada', 'Montserrat', sans-serif;
-    font-size: 1.3rem;
+    font-size: 2rem;
     font-weight: 400;
     letter-spacing: 3px;
     text-transform: uppercase;
