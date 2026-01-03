@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=1.0.5">
+    <link rel="stylesheet" href="style.css?v=1.0.6">
 </head>
 <body>
     <!-- SVG Definitions for Metallic Gradients -->
@@ -53,66 +53,36 @@
         <section id="carousel-hero">
             <div class="carousel-container">
                 <div class="carousel-slides">
-                    <!-- Slide 1 -->
+                    <!-- Slide 1 - MAS Creation -->
                     <div class="carousel-slide active">
-                        <img src="PORTFOLIO/MAS-CREATION/images/1 NOCHE.jpg" alt="MAS Creation - Render 1 Vista Nocturna">
+                        <img src="PORTFOLIO/MAS-CREATION/images/1 NOCHE.jpg" alt="MAS Creation - Flagship Store">
                         <div class="carousel-caption">
-                            <h2>MAS Creation</h2>
-                            <p>Flagship Store - Vista nocturna exterior</p>
+                            <a href="#project/mas-creation" onclick="openProject(event, 'mas-creation')" class="carousel-caption-link">
+                                <h2>MAS Creation</h2>
+                                <p>Flagship Store - Espacios Efímeros</p>
+                            </a>
                         </div>
                     </div>
 
-                    <!-- Slide 2 -->
+                    <!-- Slide 2 - BOM -->
                     <div class="carousel-slide">
-                        <img src="PORTFOLIO/MAS-CREATION/images/3 NOCHE.jpg" alt="MAS Creation - Detalle Noche Iluminación Interior">
+                        <img src="PORTFOLIO/BOM/imagenes/render-escaparate-1-ok.png" alt="BOM - Bombonería Boutique">
                         <div class="carousel-caption">
-                            <h2>MAS Creation</h2>
-                            <p>Flagship Store - Iluminación nocturna</p>
+                            <a href="#project/bom" onclick="openProject(event, 'bom')" class="carousel-caption-link">
+                                <h2>BOM</h2>
+                                <p>Bombonería Boutique - Espacios Comerciales</p>
+                            </a>
                         </div>
                     </div>
 
-                    <!-- Slide 3 -->
+                    <!-- Slide 3 - Casa Mijas -->
                     <div class="carousel-slide">
-                        <img src="PORTFOLIO/MAS-CREATION/images/2 DIA.jpg" alt="MAS Creation - Vista Diurna">
+                        <img src="PORTFOLIO/ECI/mijas/salon.png" alt="Casa Mijas - Proyecto Residencial">
                         <div class="carousel-caption">
-                            <h2>MAS Creation</h2>
-                            <p>Flagship Store - Vista diurna</p>
-                        </div>
-                    </div>
-
-                    <!-- Slide 4 -->
-                    <div class="carousel-slide">
-                        <img src="PORTFOLIO/MAS-CREATION/images/3 DIA.jpg" alt="MAS Creation - Detalle Interior Día">
-                        <div class="carousel-caption">
-                            <h2>MAS Creation</h2>
-                            <p>Flagship Store - Interior con luz natural</p>
-                        </div>
-                    </div>
-
-                    <!-- Slide 5 -->
-                    <div class="carousel-slide">
-                        <img src="PORTFOLIO/BOM/imagenes/render-escaparate-1-ok.png" alt="BOM - Bombonería Boutique Escaparate">
-                        <div class="carousel-caption">
-                            <h2>BOM</h2>
-                            <p>Bombonería Boutique - Vista del escaparate</p>
-                        </div>
-                    </div>
-
-                    <!-- Slide 6 -->
-                    <div class="carousel-slide">
-                        <img src="PORTFOLIO/ECI/mijas/salon.png" alt="Casa Mijas - Salón Principal">
-                        <div class="carousel-caption">
-                            <h2>Casa Mijas</h2>
-                            <p>Proyecto Residencial - Salón con luz natural</p>
-                        </div>
-                    </div>
-
-                    <!-- Slide 7 -->
-                    <div class="carousel-slide">
-                        <img src="PORTFOLIO/ECI/mijas/dormitorio-ppal.png" alt="Casa Mijas - Dormitorio Principal">
-                        <div class="carousel-caption">
-                            <h2>Casa Mijas</h2>
-                            <p>Proyecto Residencial - Dormitorio principal</p>
+                            <a href="#project/residencial" onclick="openProject(event, 'residencial')" class="carousel-caption-link">
+                                <h2>Casa Mijas</h2>
+                                <p>Proyecto Residencial - Interiorismo</p>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -134,10 +104,6 @@
                     <button class="indicator active" data-slide="0" aria-label="Ir a imagen 1"></button>
                     <button class="indicator" data-slide="1" aria-label="Ir a imagen 2"></button>
                     <button class="indicator" data-slide="2" aria-label="Ir a imagen 3"></button>
-                    <button class="indicator" data-slide="3" aria-label="Ir a imagen 4"></button>
-                    <button class="indicator" data-slide="4" aria-label="Ir a imagen 5"></button>
-                    <button class="indicator" data-slide="5" aria-label="Ir a imagen 6"></button>
-                    <button class="indicator" data-slide="6" aria-label="Ir a imagen 7"></button>
                 </div>
             </div>
         </section>
